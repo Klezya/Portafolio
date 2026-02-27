@@ -1,0 +1,47 @@
+---
+const explorationAreas = [
+  { area: 'DevOps', desc: 'CI/CD, infraestructura como código, automatización de despliegues.' },
+  { area: 'Bases de datos', desc: 'Indexación, query optimization, modelos relacionales y NoSQL.' },
+  { area: 'Ciberseguridad', desc: 'Seguridad en APIs, OWASP, hardening y buenas prácticas.' },
+  { area: 'Redes', desc: 'Protocolos, arquitecturas distribuidas y comunicación entre servicios.' },
+];
+---
+
+<section id="sobre-mi" class="container py-32 max-w-5xl fade-in-section">
+  <div class="flex items-center gap-3 mb-16">
+    <span class="inline-block w-8 h-px" style="background-color: var(--color-accent);"></span>
+    <h2 class="text-sm font-medium tracking-widest uppercase" style="color: var(--color-accent);">Sobre mí</h2>
+  </div>
+
+  <div class="flex flex-col gap-10">
+    <p class="text-3xl sm:text-4xl font-bold leading-snug" style="color: var(--color-text);">
+      Aprender no es un hábito,<br/>
+      <span style="color: var(--color-accent);">es la forma en que trabajo.</span>
+    </p>
+
+    <p class="text-lg leading-relaxed" style="color: var(--color-text-muted);">
+      Soy un desarrollador backend que no se queda quieto. Me nutro de documentación oficial,
+      cursos y, sobre todo, de construir proyectos propios donde puedo experimentar sin red de seguridad.
+      Cada problema nuevo es una excusa para entender mejor cómo funcionan las cosas por dentro.
+    </p>
+
+    <p class="text-lg leading-relaxed" style="color: var(--color-text-muted);">
+      Mi foco principal está en APIs y sistemas backend con Python, Docker y AWS —
+      pero cada vez me adentro más en territorios que se conectan directamente con ese trabajo:
+      <strong style="color: var(--color-text); font-weight: 600;">DevOps</strong>,
+      <strong style="color: var(--color-text); font-weight: 600;">optimización de bases de datos</strong>,
+      <strong style="color: var(--color-text); font-weight: 600;">ciberseguridad</strong> y
+      <strong style="color: var(--color-text); font-weight: 600;">redes</strong>.
+      No para ser experto en todo, sino para tomar mejores decisiones en lo que construyo.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-4">
+      {explorationAreas.map((item) => (
+        <div class="card flex flex-col gap-2">
+          <span class="text-sm font-semibold" style="color: var(--color-accent);">{item.area}</span>
+          <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

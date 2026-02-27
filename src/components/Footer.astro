@@ -1,0 +1,19 @@
+---
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com/Klezya' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/benjamin-nunez-klezya/' },
+];
+---
+
+<footer class="border-t py-12" style="border-color: var(--color-border);">
+  <div class="container flex flex-col sm:flex-row items-center justify-between gap-4 text-sm" style="color: var(--color-text-subtle);">
+    <span>&copy; {currentYear} Benjamín Núñez. Todos los derechos reservados.</span>
+    <div class="flex gap-4">
+      {socialLinks.map(({ label, href }) => (
+        <a href={href} target="_blank" rel="noopener" class="hover:text-[var(--color-accent)] transition-colors">{label}</a>
+      ))}
+    </div>
+  </div>
+</footer>

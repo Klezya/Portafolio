@@ -1,0 +1,62 @@
+---
+import ProjectCard from './ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'BanuBot',
+    subtitle: 'Robótica educativa · Educación inclusiva',
+    description: 'Robot educativo basado en Escornabot, modificado para entregar retroalimentación con luces, sonidos y movimiento. Los niños responden preguntas en una plataforma web y el robot avanza en tiempo real sobre mapas físicos temáticos — convirtiendo la comprensión lectora en una experiencia concreta para estudiantes con necesidades educativas especiales.',
+    features: [
+      'Control manual y automático del robot vía WebSocket',
+      'Plataforma web para gestión de preguntas y progreso',
+      'App móvil Android para interacción en aula',
+    ],
+    tags: ['Python', 'FastAPI', 'React', 'MongoDB', 'Docker'],
+    link: 'https://banubot.cl',
+    linkLabel: 'banubot.cl',
+    image: '/banubot-preview.jpg',
+    imageAlt: 'Vista previa de BanuBot',
+    placeholderEmoji: '🤖',
+  },
+  {
+    title: 'Edurun',
+    subtitle: 'LTI 1.3 · Evaluación de código segura',
+    description: 'Herramienta LTI 1.3 integrada con Canvas LMS para la evaluación de código Python con integridad académica. Cada keystroke, pausa y modificación queda registrada — evaluando el proceso de pensamiento del estudiante, no solo el resultado final.',
+    features: [
+      'Trazabilidad completa: teclas, tiempo y cambios en tiempo real',
+      'Ejecución aislada en contenedores Docker efímeros',
+      'Detección automática de copy-paste y cambios de pestaña',
+    ],
+    tags: ['Python', 'FastAPI', 'Vue.js', 'Docker', 'Canvas LMS'],
+    link: 'https://edurunapp-landingpage.vercel.app/',
+    linkLabel: 'edurunapp.cl',
+    image: '/edurun-preview.jpg',
+    imageAlt: 'Vista previa de Edurun',
+    placeholderEmoji: '🎓',
+  },
+];
+---
+
+<section id="proyectos" class="py-24 section-alt fade-in-section">
+  <div class="container max-w-5xl">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-16">
+      <div class="flex items-center gap-3">
+        <span class="inline-block w-8 h-px bg-[var(--color-accent)]"></span>
+        <h2 class="text-sm font-medium tracking-widest uppercase text-[var(--color-accent)]">Proyectos</h2>
+      </div>
+      <div class="flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-accent)]">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <span class="text-sm font-medium text-[var(--color-text-muted)]">1 año de experiencia</span>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      {projects.map((project) => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  </div>
+</section>
