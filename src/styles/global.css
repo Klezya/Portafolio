@@ -184,7 +184,7 @@ a:hover {
 .dark .bg-blobs { opacity: 0; }
 
 .bg-blobs__blob {
-  @apply absolute rounded-full blur-[90px] opacity-35;
+  @apply absolute rounded-full blur-[70px] opacity-35;
   will-change: transform;
 }
 .bg-blobs__blob--1 {
@@ -273,7 +273,7 @@ a:hover {
 }
 
 .bg-grid__glow {
-  @apply absolute rounded-full blur-[120px];
+  @apply absolute rounded-full blur-[80px];
   will-change: transform, opacity;
 }
 .bg-grid__glow--1 {
@@ -306,6 +306,92 @@ a:hover {
 @keyframes grid-glow-2 {
   0%, 100% { transform: translate(0, 0) scale(1); opacity: 1; }
   50% { transform: translate(-40px, -50px) scale(1.15); opacity: 0.7; }
+}
+
+/* ──────────────────────────────────────────────
+   REDUCED MOTION & PERFORMANCE FALLBACK
+   ────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .bg-blobs__blob,
+  .bg-grid__line,
+  .bg-grid__glow {
+    animation: none !important;
+  }
+  
+  .bg-blobs__blob {
+    filter: blur(40px) !important; /* Reduced blur */
+  }
+  
+  .bg-grid__glow {
+    filter: blur(60px) !important;
+  }
+  
+  .fade-in-section {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .section-alt,
+  .navbar-glass {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .dark .section-alt {
+    background-color: rgba(30, 41, 59, 0.95);
+  }
+  
+  .navbar-glass {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+  }
+  
+  .dark .navbar-glass {
+    background-color: rgba(30, 41, 59, 0.95) !important;
+  }
+}
+
+/* JS-detected low performance mode */
+.reduced-motion .bg-blobs__blob,
+.reduced-motion .bg-grid__line,
+.reduced-motion .bg-grid__glow {
+  animation: none !important;
+}
+
+.reduced-motion .bg-blobs__blob {
+  filter: blur(40px) !important;
+}
+
+.reduced-motion .bg-grid__glow {
+  filter: blur(60px) !important;
+}
+
+.reduced-motion .fade-in-section {
+  transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.reduced-motion .section-alt,
+.reduced-motion .navbar-glass {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.reduced-motion .section-alt {
+  background-color: rgba(241, 245, 249, 0.95);
+}
+
+.reduced-motion.dark .section-alt {
+  background-color: rgba(30, 41, 59, 0.95);
+}
+
+.reduced-motion .navbar-glass {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.reduced-motion.dark .navbar-glass {
+  background-color: rgba(30, 41, 59, 0.95) !important;
 }
 
 /* ──────────────────────────────────────────────

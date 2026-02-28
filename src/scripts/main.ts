@@ -1,3 +1,34 @@
+// ── PERFORMANCE DETECTION ──────────────────────────
+// Detect if user has slow rendering (no hardware acceleration)
+function detectLowPerformance(): boolean {
+  // Check for reduced motion preference
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return true;
+  }
+  
+  // Check hardware concurrency (low-end devices)
+  if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) {
+    return true;
+  }
+  
+  // Check device memory if available (Chrome only)
+  const nav = navigator as Navigator & { deviceMemory?: number };
+  if (nav.deviceMemory && nav.deviceMemory < 4) {
+    return true;
+  }
+  
+  return false;
+}
+
+// Apply low-performance mode
+function applyLowPerformanceMode() {
+  document.documentElement.classList.add('reduced-motion');
+}
+
+if (detectLowPerformance()) {
+  applyLowPerformanceMode();
+}
+
 // ── THEME TOGGLE ──────────────────────────────────
 const html = document.documentElement;
 const toggle = document.getElementById('theme-toggle');
