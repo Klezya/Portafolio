@@ -1,0 +1,144 @@
+---
+interface Certificate {
+  name: string;
+  issuer: string;
+  icon?: string;
+  iconSvg?: string; // SVG inline para iconos que no existen
+  date?: string;
+  pdfFile?: string;
+  credentialUrl?: string;
+  darkInvert?: boolean;
+}
+
+const certificates: Certificate[] = [
+  {
+    name: 'Conceptos Básicos de Redes',
+    issuer: 'Cisco Networking Academy',
+    icon: 'https://cdn.simpleicons.org/cisco/1BA0D7',
+    date: 'Abril 2025',
+    pdfFile: 'cisco-redes-basicas.pdf',
+  },
+  {
+    name: 'Introduction to Cybersecurity',
+    issuer: 'Cisco Networking Academy',
+    icon: 'https://cdn.simpleicons.org/cisco/1BA0D7',
+    date: 'Mayo 2020',
+    pdfFile: 'cisco-cybersecurity.pdf',
+  },
+  {
+    name: 'Databases and SQL for Data Science with Python',
+    issuer: 'IBM · Coursera',
+    icon: 'https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/ibm.svg',
+    date: '2024',
+    pdfFile: 'ibm-sql-data-science.pdf',
+  },
+  {
+    name: 'MongoDB Data Modeling Path',
+    issuer: 'MongoDB',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
+    date: 'Mayo 2025',
+    pdfFile: 'mongodb-data-modeling.pdf',
+  },
+  {
+    name: 'TOEIC Bridge · B1 (96/100)',
+    issuer: 'ETS · Universidad Andrés Bello',
+    // Icono de idiomas/globo
+    iconSvg: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+    date: 'Junio 2023',
+    pdfFile: 'toeic-bridge-b1.pdf',
+  },
+];
+---
+
+<section id="certificados" class="section-alt py-24 fade-in-section">
+  <div class="container max-w-5xl">
+    <div class="flex flex-col items-center text-center gap-4 mb-12">
+      <div class="flex items-center gap-3">
+        <span class="inline-block w-8 h-px bg-[var(--color-accent)]"></span>
+        <h2 class="text-sm font-medium tracking-widest uppercase text-[var(--color-accent)]">Certificaciones</h2>
+        <span class="inline-block w-8 h-px bg-[var(--color-accent)]"></span>
+      </div>
+      <p class="text-lg text-[var(--color-text-muted)]">Credenciales y certificaciones profesionales</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {certificates.map((cert) => {
+        const certUrl = cert.pdfFile 
+          ? `/certificates/${cert.pdfFile}` 
+          : cert.credentialUrl || '#';
+        
+        return (
+          <div class="certificate-card group">
+            <div class="flex items-start gap-4 w-full">
+              <div class="certificate-icon">
+                {cert.iconSvg ? (
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="32" 
+                    height="32" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-width="1.5" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"
+                    style="color: var(--color-accent);"
+                  >
+                    <Fragment set:html={cert.iconSvg} />
+                  </svg>
+                ) : (
+                  <img 
+                    src={cert.icon} 
+                    width="32" 
+                    height="32" 
+                    alt={cert.issuer}
+                    class={cert.darkInvert ? 'dark:invert' : ''}
+                  />
+                )}
+              </div>
+              <div class="flex flex-col gap-2 flex-1 min-w-0">
+                <div class="flex flex-col gap-1">
+                  <h3 class="font-medium text-sm text-[var(--color-text)] leading-tight">
+                    {cert.name}
+                  </h3>
+                  <p class="text-xs text-[var(--color-text-muted)]">{cert.issuer}</p>
+                  {cert.date && (
+                    <p class="text-xs text-[var(--color-text-subtle)]">{cert.date}</p>
+                  )}
+                </div>
+                
+                {(cert.pdfFile || cert.credentialUrl) && (
+                  <a 
+                    href={certUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="certificate-btn"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="14" 
+                      height="14" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      stroke-width="2" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round"
+                    >
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                      <line x1="16" y1="17" x2="8" y2="17"/>
+                      <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                    Ver Certificado
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
