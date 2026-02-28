@@ -98,6 +98,14 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
+/* Card con fondo suave/tenue */
+.card-soft-bg {
+  background-color: rgba(250, 249, 247, 0.5);
+}
+.dark .card-soft-bg {
+  background-color: rgba(15, 23, 42, 0.5);
+}
+
 /* Theme Switch */
 .theme-switch {
   @apply relative inline-flex items-center w-14 h-8 rounded-full cursor-pointer;

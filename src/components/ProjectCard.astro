@@ -15,7 +15,7 @@ interface Props {
 const { title, subtitle, description, features, tags, link, linkLabel, image, imageAlt, placeholderEmoji } = Astro.props;
 ---
 
-<article class="card flex flex-col gap-0 overflow-hidden" style="padding: 0;">
+<article class="card flex flex-col gap-0 overflow-hidden card-soft-bg" style="padding: 0;">
   <div class="relative w-full h-52 overflow-hidden" style="background-color: var(--color-bg-muted);">
     <img
       src={image}
