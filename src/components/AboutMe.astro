@@ -1,31 +1,31 @@
 ---
 const explorationAreas = [
-  { area: 'DevOps', desc: 'CI/CD, infraestructura como código, automatización de despliegues.' },
-  { area: 'Bases de datos', desc: 'Indexación, query optimization, modelos relacionales y NoSQL.' },
-  { area: 'Ciberseguridad', desc: 'Seguridad en APIs, OWASP, hardening y buenas prácticas.' },
-  { area: 'Redes', desc: 'Protocolos, arquitecturas distribuidas y comunicación entre servicios.' },
+  { area: 'DevOps', desc: 'CI/CD, infraestructura como código, automatización de despliegues.', areaKey: 'about.area.devops', descKey: 'about.area.devops.desc' },
+  { area: 'Bases de datos', desc: 'Indexación, query optimization, modelos relacionales y NoSQL.', areaKey: 'about.area.databases', descKey: 'about.area.databases.desc' },
+  { area: 'Ciberseguridad', desc: 'Seguridad en APIs, OWASP, hardening y buenas prácticas.', areaKey: 'about.area.security', descKey: 'about.area.security.desc' },
+  { area: 'Redes', desc: 'Protocolos, arquitecturas distribuidas y comunicación entre servicios.', areaKey: 'about.area.networking', descKey: 'about.area.networking.desc' },
 ];
 ---
 
 <section id="sobre-mi" class="container py-32 max-w-5xl fade-in-section">
   <div class="flex items-center gap-3 mb-16">
     <span class="inline-block w-8 h-px" style="background-color: var(--color-accent);"></span>
-    <h2 class="text-sm font-medium tracking-widest uppercase" style="color: var(--color-accent);">Sobre mí</h2>
+    <h2 class="text-sm font-medium tracking-widest uppercase" style="color: var(--color-accent);" data-i18n="about.tag">Sobre mí</h2>
   </div>
 
   <div class="flex flex-col gap-10">
-    <p class="text-3xl sm:text-4xl font-bold leading-snug" style="color: var(--color-text); text-wrap: balance;">
+    <p class="text-3xl sm:text-4xl font-bold leading-snug" style="color: var(--color-text); text-wrap: balance;" data-i18n-html="about.headline">
       Aprender no es un hábito,<br/>
       <span style="color: var(--color-accent);">es la forma en que trabajo.</span>
     </p>
 
-    <p class="text-lg leading-relaxed" style="color: var(--color-text-muted);">
+    <p class="text-lg leading-relaxed" style="color: var(--color-text-muted);" data-i18n="about.p1">
       Soy un desarrollador backend que no se queda quieto. Me nutro de documentación oficial,
       cursos y, sobre todo, de construir proyectos propios donde puedo experimentar sin red de seguridad.
       Cada problema nuevo es una excusa para entender mejor cómo funcionan las cosas por dentro.
     </p>
 
-    <p class="text-lg leading-relaxed" style="color: var(--color-text-muted);">
+    <p class="text-lg leading-relaxed" style="color: var(--color-text-muted);" data-i18n-html="about.p2">
       Mi foco principal está en APIs y sistemas backend con Python, Docker y AWS —
       pero cada vez me adentro más en territorios que se conectan directamente con ese trabajo:
       <strong style="color: var(--color-text); font-weight: 600;">DevOps</strong>,
@@ -38,8 +38,8 @@ const explorationAreas = [
     <div class="grid sm:grid-cols-2 gap-4">
       {explorationAreas.map((item) => (
         <div class="card flex flex-col gap-2">
-          <span class="text-sm font-semibold" style="color: var(--color-accent);">{item.area}</span>
-          <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);">{item.desc}</p>
+          <span class="text-sm font-semibold" style="color: var(--color-accent);" data-i18n={item.areaKey}>{item.area}</span>
+          <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);" data-i18n={item.descKey}>{item.desc}</p>
         </div>
       ))}
     </div>

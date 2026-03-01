@@ -1,3 +1,7 @@
+// ── I18N INITIALIZATION ──────────────────────────────
+import { initI18n, getLang } from '../i18n/i18n-client';
+initI18n();
+
 // ── PERFORMANCE DETECTION ──────────────────────────
 // Detect if user has slow rendering (no hardware acceleration)
 function detectLowPerformance(): boolean {
@@ -119,12 +123,12 @@ if (cfForm && cfSubmit && cfBtnText && cfSpinner && cfFeedback) {
     const message = (document.getElementById('cf-message') as HTMLTextAreaElement).value.trim();
 
     if (!name || !email || !message) {
-      showFeedback('Por favor completa todos los campos.', 'error');
+      showFeedback(getLang() === 'en' ? 'Please fill in all fields.' : 'Por favor completa todos los campos.', 'error');
       return;
     }
 
     cfSubmit.disabled = true;
-    cfBtnText.textContent = 'Enviando…';
+    cfBtnText.textContent = getLang() === 'en' ? 'Sending…' : 'Enviando…';
     cfSpinner.classList.remove('hidden');
     cfFeedback.classList.add('hidden');
 
@@ -136,16 +140,16 @@ if (cfForm && cfSubmit && cfBtnText && cfSpinner && cfFeedback) {
       });
 
       if (res.ok) {
-        showFeedback('¡Mensaje enviado! Te responderé pronto.', 'success');
+        showFeedback(getLang() === 'en' ? "Message sent! I'll get back to you soon." : '¡Mensaje enviado! Te responderé pronto.', 'success');
         cfForm.reset();
       } else {
         throw new Error();
       }
     } catch {
-      showFeedback('Hubo un error al enviar. Escríbeme directo a benjamin.nunez.beat@gmail.com', 'error');
+      showFeedback(getLang() === 'en' ? 'There was an error sending. Write to me at benjamin.nunez.beat@gmail.com' : 'Hubo un error al enviar. Escríbeme directo a benjamin.nunez.beat@gmail.com', 'error');
     } finally {
       cfSubmit.disabled = false;
-      cfBtnText.textContent = 'Enviar mensaje';
+      cfBtnText.textContent = getLang() === 'en' ? 'Send message' : 'Enviar mensaje';
       cfSpinner.classList.add('hidden');
     }
   });

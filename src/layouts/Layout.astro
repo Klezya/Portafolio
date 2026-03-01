@@ -46,12 +46,14 @@ const { title, description = "Backend developer especializado en Python, Docker 
         if (stored === 'dark' || (!stored && prefersDark)) {
           document.documentElement.classList.add('dark');
         }
+        const lang = localStorage.getItem('lang');
+        if (lang === 'en') document.documentElement.lang = 'en';
       })();
     </script>
   </head>
 
   <body>
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium" style="background-color: var(--color-accent); color: white;">Saltar al contenido</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-medium" style="background-color: var(--color-accent); color: white;" data-i18n="page.skip">Saltar al contenido</a>
     <slot />
     <Analytics />
     <SpeedInsights />

@@ -17,6 +17,7 @@ const projects = [
     image: '/banubot-preview.jpg',
     imageAlt: 'Vista previa de BanuBot',
     placeholderEmoji: '🤖',
+    i18nPrefix: 'banubot',
   },
   {
     title: 'Edurun',
@@ -33,6 +34,7 @@ const projects = [
     image: '/edurun-preview.jpg',
     imageAlt: 'Vista previa de Edurun',
     placeholderEmoji: '🎓',
+    i18nPrefix: 'edurun',
   },
 ];
 ---
@@ -42,14 +44,14 @@ const projects = [
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-16">
       <div class="flex items-center gap-3">
         <span class="inline-block w-8 h-px bg-[var(--color-accent)]"></span>
-        <h2 class="text-sm font-medium tracking-widest uppercase text-[var(--color-accent)]">Proyectos</h2>
+        <h2 class="text-sm font-medium tracking-widest uppercase text-[var(--color-accent)]" data-i18n="projects.tag">Proyectos</h2>
       </div>
       <div class="flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)]">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[var(--color-accent)]">
           <circle cx="12" cy="12" r="10"/>
           <polyline points="12 6 12 12 16 14"/>
         </svg>
-        <span class="text-sm font-medium text-[var(--color-text-muted)]">1 año de experiencia</span>
+        <span class="text-sm font-medium text-[var(--color-text-muted)]" data-i18n="projects.experience">1 año de experiencia</span>
       </div>
     </div>
 

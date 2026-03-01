@@ -7,36 +7,35 @@ const techStack = ['Python', 'Docker', 'AWS', 'REST APIs', 'Ciberseguridad'];
     <div class="hero-stagger flex items-center gap-3" style="--stagger: 0;">
       <span class="availability-pin">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Disponible para trabajar
+        <span data-i18n="hero.available">Disponible para trabajar</span>
       </span>
     </div>
 
     <div class="hero-stagger flex items-center gap-3" style="--stagger: 1;">
       <span class="inline-block w-8 h-px" style="background-color: var(--color-accent);" aria-hidden="true"></span>
-      <span class="text-sm font-medium tracking-widest uppercase" style="color: var(--color-accent);">
+      <span class="text-sm font-medium tracking-widest uppercase" style="color: var(--color-accent);" data-i18n="hero.role">
         Ingeniero en Computación & Informática
       </span>
     </div>
 
     <div class="hero-stagger flex flex-col gap-2" style="--stagger: 2;">
-      <p class="text-lg font-medium" style="color: var(--color-text-muted);">Hola, soy</p>
+      <p class="text-lg font-medium" style="color: var(--color-text-muted);" data-i18n="hero.greeting">Hola, soy</p>
       <h1 class="text-6xl sm:text-7xl md:text-8xl font-bold leading-none tracking-tight" style="color: var(--color-text); text-wrap: balance;">
         Benjamín<br />
         <span style="color: var(--color-accent);">Núñez.</span>
       </h1>
     </div>
 
-    <p class="hero-stagger text-xl sm:text-2xl leading-relaxed max-w-2xl" style="color: var(--color-text-muted); --stagger: 3;">
-      Backend developer especializado en la construcción de APIs robustas
-      con <strong style="color: var(--color-text); font-weight: 600;">Python</strong>,
+    <p class="hero-stagger text-xl sm:text-2xl leading-relaxed max-w-2xl" style="color: var(--color-text-muted); --stagger: 3;" data-i18n-html="hero.bio">
+      Developer enfocado en sistemas backend con <strong style="color: var(--color-text); font-weight: 600;">Python</strong>,
       <strong style="color: var(--color-text); font-weight: 600;">Docker</strong> y
       <strong style="color: var(--color-text); font-weight: 600;">AWS</strong> —
-      actualmente explorando el mundo de la
-      <strong style="color: var(--color-text); font-weight: 600;">ciberseguridad</strong> y las
-      <strong style="color: var(--color-text); font-weight: 600;">redes</strong>.
+      actualmente aprendiendo <strong style="color: var(--color-text); font-weight: 600;">Ciberseguridad</strong>,
+      <strong style="color: var(--color-text); font-weight: 600;">Escalabilidad Cloud</strong> y
+      <strong style="color: var(--color-text); font-weight: 600;">DevOps</strong>.
     </p>
 
-    <p class="hero-stagger text-sm" style="color: var(--color-text-subtle); --stagger: 4;">
+    <p class="hero-stagger text-sm" style="color: var(--color-text-subtle); --stagger: 4;" data-i18n="hero.education">
       Egresado · Universidad Andrés Bello
     </p>
 
@@ -47,8 +46,8 @@ const techStack = ['Python', 'Docker', 'AWS', 'REST APIs', 'Ciberseguridad'];
     </div>
 
     <div class="hero-stagger flex flex-wrap gap-4" style="--stagger: 6;">
-      <a href="#proyectos" class="btn-primary">Ver proyectos</a>
-      <a href="#contacto" class="btn-secondary">Contacto</a>
+      <a href="#proyectos" class="btn-primary" data-i18n="hero.cta.projects">Ver proyectos</a>
+      <a href="#contacto" class="btn-secondary" data-i18n="hero.cta.contact">Contacto</a>
       <a href="/cv.pdf" target="_blank" rel="noopener" class="btn-secondary">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
@@ -57,7 +56,7 @@ const techStack = ['Python', 'Docker', 'AWS', 'REST APIs', 'Ciberseguridad'];
           <line x1="16" y1="17" x2="8" y2="17"/>
           <line x1="10" y1="9" x2="8" y2="9"/>
         </svg>
-        Ver CV
+        <span data-i18n="hero.cta.cv">Ver CV</span>
       </a>
     </div>
   </div>
@@ -75,6 +74,7 @@ const techStack = ['Python', 'Docker', 'AWS', 'REST APIs', 'Ciberseguridad'];
         width="320"
         height="320"
         fetchpriority="high"
+        data-i18n-alt="hero.photo.alt"
       />
       <div
         id="hero-placeholder"

@@ -8,6 +8,8 @@ interface Certificate {
   pdfFile?: string;
   credentialUrl?: string;
   darkInvert?: boolean;
+  i18nKeyName?: string;
+  i18nKeyDate?: string;
 }
 
 const certificates: Certificate[] = [
@@ -17,6 +19,8 @@ const certificates: Certificate[] = [
     icon: 'https://cdn.simpleicons.org/cisco/1BA0D7',
     date: 'Abril 2025',
     pdfFile: 'cisco-redes-basicas.pdf',
+    i18nKeyName: 'cert.redes.name',
+    i18nKeyDate: 'cert.redes.date',
   },
   {
     name: 'Introduction to Cybersecurity',
@@ -24,6 +28,7 @@ const certificates: Certificate[] = [
     icon: 'https://cdn.simpleicons.org/cisco/1BA0D7',
     date: 'Mayo 2020',
     pdfFile: 'cisco-cybersecurity.pdf',
+    i18nKeyDate: 'cert.cyber.date',
   },
   {
     name: 'Databases and SQL for Data Science with Python',
@@ -31,6 +36,7 @@ const certificates: Certificate[] = [
     icon: 'https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/ibm.svg',
     date: '2024',
     pdfFile: 'ibm-sql-data-science.pdf',
+    i18nKeyDate: 'cert.ibm.date',
   },
   {
     name: 'MongoDB Data Modeling Path',
@@ -38,6 +44,7 @@ const certificates: Certificate[] = [
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
     date: 'Mayo 2025',
     pdfFile: 'mongodb-data-modeling.pdf',
+    i18nKeyDate: 'cert.mongo.date',
   },
   {
     name: 'TOEIC Bridge · B1 (96/100)',
@@ -46,6 +53,7 @@ const certificates: Certificate[] = [
     iconSvg: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
     date: 'Junio 2023',
     pdfFile: 'toeic-bridge-b1.pdf',
+    i18nKeyDate: 'cert.toeic.date',
   },
 ];
 ---
@@ -55,9 +63,9 @@ const certificates: Certificate[] = [
     <div class="flex flex-col gap-4 mb-12">
       <div class="flex items-center gap-3">
         <span class="inline-block w-8 h-px bg-[var(--color-accent)]"></span>
-        <h2 class="text-sm font-medium tracking-widest uppercase text-[var(--color-accent)]">Certificaciones</h2>
+        <h2 class="text-sm font-medium tracking-widest uppercase text-[var(--color-accent)]" data-i18n="certs.tag">Certificaciones</h2>
       </div>
-      <p class="text-lg text-[var(--color-text-muted)]">Credenciales y certificaciones profesionales</p>
+      <p class="text-lg text-[var(--color-text-muted)]" data-i18n="certs.subtitle">Credenciales y certificaciones profesionales</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -105,12 +113,12 @@ const certificates: Certificate[] = [
                 )}
               </div>
               <div class="flex flex-col gap-1 flex-1 min-w-0">
-                <h3 class="font-medium text-sm text-[var(--color-text)] leading-tight">
+                <h3 class="font-medium text-sm text-[var(--color-text)] leading-tight" data-i18n={cert.i18nKeyName}>
                   {cert.name}
                 </h3>
                 <p class="text-xs text-[var(--color-text-muted)]">{cert.issuer}</p>
                 {cert.date && (
-                  <p class="text-xs text-[var(--color-text-subtle)]">{cert.date}</p>
+                  <p class="text-xs text-[var(--color-text-subtle)]" data-i18n={cert.i18nKeyDate}>{cert.date}</p>
                 )}
               </div>
             </div>
@@ -134,7 +142,7 @@ const certificates: Certificate[] = [
                 <line x1="16" y1="17" x2="8" y2="17"/>
                 <polyline points="10 9 9 9 8 9"/>
               </svg>
-              Ver Certificado
+              <span data-i18n="certs.view">Ver Certificado</span>
             </span>
           </a>
         );

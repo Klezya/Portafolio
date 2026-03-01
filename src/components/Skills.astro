@@ -9,12 +9,14 @@ interface Skill {
 
 interface SkillCategory {
   title: string;
+  i18nKey: string;
   skills: Skill[];
 }
 
 const skillCategories: SkillCategory[] = [
   {
     title: 'Lenguajes',
+    i18nKey: 'skills.cat.languages',
     skills: [
       { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
       { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
@@ -24,6 +26,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: 'Frameworks & Librerías',
+    i18nKey: 'skills.cat.frameworks',
     skills: [
       { name: 'FastAPI', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg' },
       { name: 'Vue.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg' },
@@ -31,6 +34,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     title: 'Herramientas & Plataformas',
+    i18nKey: 'skills.cat.tools',
     skills: [
       { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg', darkInvert: true },
       { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
@@ -52,15 +56,15 @@ const skillCategories: SkillCategory[] = [
   <div class="flex flex-col gap-4 mb-12">
     <div class="flex items-center gap-3">
       <span class="inline-block w-8 h-px bg-[var(--color-accent)]"></span>
-      <h2 class="text-sm font-medium tracking-widest uppercase text-[var(--color-accent)]">Stack Técnico</h2>
+      <h2 class="text-sm font-medium tracking-widest uppercase text-[var(--color-accent)]" data-i18n="skills.tag">Stack Técnico</h2>
     </div>
-    <p class="text-lg text-[var(--color-text-muted)]">Tecnologías y herramientas que utilizo</p>
+    <p class="text-lg text-[var(--color-text-muted)]" data-i18n="skills.subtitle">Tecnologías y herramientas que utilizo</p>
   </div>
 
   <div class="flex flex-col gap-10">
     {skillCategories.map((category) => (
       <div class="flex flex-col gap-4">
-        <p class="text-xs font-semibold tracking-widest uppercase text-[var(--color-text-subtle)]">{category.title}</p>
+        <p class="text-xs font-semibold tracking-widest uppercase text-[var(--color-text-subtle)]" data-i18n={category.i18nKey}>{category.title}</p>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {category.skills.map((skill) => (
             <div class="skill-pill">

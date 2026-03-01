@@ -2,10 +2,10 @@
 const currentYear = new Date().getFullYear();
 
 const navLinks = [
-  { href: '#proyectos', label: 'Proyectos' },
-  { href: '#sobre-mi', label: 'Sobre mí' },
-  { href: '#habilidades', label: 'Habilidades' },
-  { href: '#certificados', label: 'Certificados' },
+  { href: '#proyectos', label: 'Proyectos', i18nKey: 'nav.projects' },
+  { href: '#sobre-mi', label: 'Sobre mí', i18nKey: 'nav.about' },
+  { href: '#habilidades', label: 'Habilidades', i18nKey: 'nav.skills' },
+  { href: '#certificados', label: 'Certificados', i18nKey: 'nav.certificates' },
 ];
 
 const socialLinks = [
@@ -33,21 +33,21 @@ const socialLinks = [
       <!-- Brand + CTA -->
       <div class="flex flex-col gap-4 sm:col-span-1">
         <span class="text-lg font-bold tracking-tight font-display"><span style="color: var(--color-accent);">&lt;</span><span style="color: var(--color-text);">BN</span><span style="color: var(--color-accent);"> /&gt;</span></span>
-        <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);">
+        <p class="text-sm leading-relaxed" style="color: var(--color-text-muted);" data-i18n="footer.tagline">
           Backend developer construyendo APIs robustas con Python, Docker y AWS.
         </p>
-        <a href="#contacto" class="btn-primary text-sm w-fit">
+        <a href="#contacto" class="btn-primary text-sm w-fit" data-i18n="footer.cta">
           ¿Trabajamos juntos? →
         </a>
       </div>
 
       <!-- Navigation -->
       <div class="flex flex-col gap-3">
-        <span class="text-xs font-semibold tracking-widest uppercase" style="color: var(--color-text-subtle);">Navegación</span>
+        <span class="text-xs font-semibold tracking-widest uppercase" style="color: var(--color-text-subtle);" data-i18n="footer.nav">Navegación</span>
         <ul class="flex flex-col gap-2">
-          {navLinks.map(({ href, label }) => (
+          {navLinks.map(({ href, label, i18nKey }) => (
             <li>
-              <a href={href} class="text-sm font-medium hover:text-[var(--color-accent)] transition-colors" style="color: var(--color-text-muted);">
+              <a href={href} class="text-sm font-medium hover:text-[var(--color-accent)] transition-colors" style="color: var(--color-text-muted);" data-i18n={i18nKey}>
                 {label}
               </a>
             </li>
@@ -57,7 +57,7 @@ const socialLinks = [
 
       <!-- Social -->
       <div class="flex flex-col gap-3">
-        <span class="text-xs font-semibold tracking-widest uppercase" style="color: var(--color-text-subtle);">Contacto</span>
+        <span class="text-xs font-semibold tracking-widest uppercase" style="color: var(--color-text-subtle);" data-i18n="footer.social">Contacto</span>
         <ul class="flex flex-col gap-2">
           {socialLinks.map(({ label, href, svg }) => (
             <li>
@@ -75,8 +75,8 @@ const socialLinks = [
 
     <!-- Bottom bar -->
     <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style="border-top: 1px solid var(--color-border); color: var(--color-text-subtle);">
-      <span>&copy; {currentYear} Benjamín Núñez. Todos los derechos reservados.</span>
-      <span>Hecho con Astro & Tailwind CSS</span>
+      <span>&copy; {currentYear} Benjamín Núñez. <span data-i18n="footer.copyright">Todos los derechos reservados.</span></span>
+      <span data-i18n="footer.made">Hecho con Astro &amp; Tailwind CSS</span>
     </div>
   </div>
 </footer>
