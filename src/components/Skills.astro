@@ -49,11 +49,10 @@ const skillCategories: SkillCategory[] = [
 ---
 
 <section id="habilidades" class="container py-24 max-w-5xl fade-in-section">
-  <div class="flex flex-col items-center text-center gap-4 mb-12">
+  <div class="flex flex-col gap-4 mb-12">
     <div class="flex items-center gap-3">
       <span class="inline-block w-8 h-px bg-[var(--color-accent)]"></span>
       <h2 class="text-sm font-medium tracking-widest uppercase text-[var(--color-accent)]">Stack Técnico</h2>
-      <span class="inline-block w-8 h-px bg-[var(--color-accent)]"></span>
     </div>
     <p class="text-lg text-[var(--color-text-muted)]">Tecnologías y herramientas que utilizo</p>
   </div>
@@ -62,19 +61,19 @@ const skillCategories: SkillCategory[] = [
     {skillCategories.map((category) => (
       <div class="flex flex-col gap-4">
         <p class="text-xs font-semibold tracking-widest uppercase text-[var(--color-text-subtle)]">{category.title}</p>
-        <div class="flex flex-wrap gap-3">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {category.skills.map((skill) => (
             <div class="skill-pill">
               {skill.iconType === 'svg' ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-accent);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-accent);">
                   <Fragment set:html={skill.svg} />
                 </svg>
               ) : skill.iconType === 'svg-fill' ? (
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-text);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-text);">
                   <Fragment set:html={skill.svg} />
                 </svg>
               ) : (
-                <img src={skill.icon} width="20" height="20" alt="" class={skill.darkInvert ? 'dark:invert' : ''} />
+                <img src={skill.icon} width="25" height="25" alt="" loading="lazy" class={skill.darkInvert ? 'dark:invert' : ''} />
               )}
               {skill.name}
             </div>

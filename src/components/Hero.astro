@@ -4,22 +4,29 @@ const techStack = ['Python', 'Docker', 'AWS', 'REST APIs', 'Ciberseguridad'];
 
 <section class="section-separated container flex flex-col lg:flex-row items-center justify-between min-h-[88dvh] py-32 gap-20 max-w-6xl">
   <div class="flex flex-col gap-8 flex-1">
-    <div class="flex items-center gap-3">
-      <span class="inline-block w-8 h-px" style="background-color: var(--color-accent);"></span>
+    <div class="hero-stagger flex items-center gap-3" style="--stagger: 0;">
+      <span class="availability-pin">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Disponible para trabajar
+      </span>
+    </div>
+
+    <div class="hero-stagger flex items-center gap-3" style="--stagger: 1;">
+      <span class="inline-block w-8 h-px" style="background-color: var(--color-accent);" aria-hidden="true"></span>
       <span class="text-sm font-medium tracking-widest uppercase" style="color: var(--color-accent);">
         Ingeniero en Computación & Informática
       </span>
     </div>
 
-    <div class="flex flex-col gap-2">
+    <div class="hero-stagger flex flex-col gap-2" style="--stagger: 2;">
       <p class="text-lg font-medium" style="color: var(--color-text-muted);">Hola, soy</p>
-      <h1 class="text-6xl sm:text-7xl md:text-8xl font-bold leading-none tracking-tight" style="color: var(--color-text);">
+      <h1 class="text-6xl sm:text-7xl md:text-8xl font-bold leading-none tracking-tight" style="color: var(--color-text); text-wrap: balance;">
         Benjamín<br />
         <span style="color: var(--color-accent);">Núñez.</span>
       </h1>
     </div>
 
-    <p class="text-xl sm:text-2xl leading-relaxed max-w-2xl" style="color: var(--color-text-muted);">
+    <p class="hero-stagger text-xl sm:text-2xl leading-relaxed max-w-2xl" style="color: var(--color-text-muted); --stagger: 3;">
       Backend developer especializado en la construcción de APIs robustas
       con <strong style="color: var(--color-text); font-weight: 600;">Python</strong>,
       <strong style="color: var(--color-text); font-weight: 600;">Docker</strong> y
@@ -29,17 +36,17 @@ const techStack = ['Python', 'Docker', 'AWS', 'REST APIs', 'Ciberseguridad'];
       <strong style="color: var(--color-text); font-weight: 600;">redes</strong>.
     </p>
 
-    <p class="text-sm" style="color: var(--color-text-subtle);">
+    <p class="hero-stagger text-sm" style="color: var(--color-text-subtle); --stagger: 4;">
       Egresado · Universidad Andrés Bello
     </p>
 
-    <div class="flex flex-wrap gap-2">
+    <div class="hero-stagger flex flex-wrap gap-2" style="--stagger: 5;">
       {techStack.map((tech) => (
         <span class="badge">{tech}</span>
       ))}
     </div>
 
-    <div class="flex flex-wrap gap-4">
+    <div class="hero-stagger flex flex-wrap gap-4" style="--stagger: 6;">
       <a href="#proyectos" class="btn-primary">Ver proyectos</a>
       <a href="#contacto" class="btn-secondary">Contacto</a>
       <a href="/cv.pdf" target="_blank" rel="noopener" class="btn-secondary">
@@ -55,7 +62,7 @@ const techStack = ['Python', 'Docker', 'AWS', 'REST APIs', 'Ciberseguridad'];
     </div>
   </div>
 
-  <div class="flex-shrink-0 flex flex-col items-center gap-4">
+  <div class="hero-stagger flex-shrink-0 flex flex-col items-center gap-4" style="--stagger: 7;">
     <div
       class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden"
       style="border: 2px solid var(--color-border); box-shadow: var(--shadow-lg);"
@@ -65,6 +72,9 @@ const techStack = ['Python', 'Docker', 'AWS', 'REST APIs', 'Ciberseguridad'];
         alt="Fotografía de Benjamín Núñez"
         class="w-full h-full object-cover"
         id="hero-photo"
+        width="320"
+        height="320"
+        fetchpriority="high"
       />
       <div
         id="hero-placeholder"
@@ -76,11 +86,6 @@ const techStack = ['Python', 'Docker', 'AWS', 'REST APIs', 'Ciberseguridad'];
         </svg>
         <span class="text-xs font-medium" style="color: var(--color-text-subtle);">Tu fotografía aquí</span>
       </div>
-    </div>
-
-    <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      <span class="text-xs font-medium" style="color: var(--color-text-muted);">Disponible para trabajar</span>
     </div>
   </div>
 </section>
