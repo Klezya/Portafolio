@@ -77,6 +77,8 @@ export const translations = {
     'cert.cyber.date': 'Mayo 2020',
     'cert.ibm.date': '2024',
     'cert.mongo.date': 'Mayo 2025',
+    'cert.python.name': 'Python for Data Science, AI & Development',
+    'cert.python.date': 'Marzo 2025',
     'cert.toeic.date': 'Junio 2023',
 
     // Contact
@@ -179,6 +181,8 @@ export const translations = {
     'cert.cyber.date': 'May 2020',
     'cert.ibm.date': '2024',
     'cert.mongo.date': 'May 2025',
+    'cert.python.name': 'Python for Data Science, AI & Development',
+    'cert.python.date': 'March 2025',
     'cert.toeic.date': 'June 2023',
 
     // Contact
