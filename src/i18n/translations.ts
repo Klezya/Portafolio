@@ -48,6 +48,8 @@ export const translations = {
     'projects.tag': 'Proyectos',
     'projects.experience': '1 año de experiencia',
     'projects.view': 'Ver proyecto →',
+    'projects.repo': 'Ver repositorio',
+    'projects.repo.private': 'Repositorio privado',
     'banubot.subtitle': 'Robótica educativa · Educación inclusiva',
     'banubot.description':
       'Robot educativo basado en Escornabot, modificado para entregar retroalimentación con luces, sonidos y movimiento. Los niños responden preguntas en una plataforma web y el robot avanza en tiempo real sobre mapas físicos temáticos — convirtiendo la comprensión lectora en una experiencia concreta para estudiantes con necesidades educativas especiales.',
@@ -60,6 +62,12 @@ export const translations = {
     'edurun.feature1': 'Trazabilidad completa: teclas, tiempo y cambios en tiempo real',
     'edurun.feature2': 'Ejecución aislada en contenedores Docker efímeros',
     'edurun.feature3': 'Detección automática de copy-paste y cambios de pestaña',
+    'securevault.subtitle': 'Seguridad web · Gestión de contraseñas',
+    'securevault.description':
+      'Proyecto full-stack orientado a explorar conceptos de seguridad web: hashing con Argon2, autenticación JWT y manejo seguro de datos sensibles. Ofrece una interfaz para almacenar contraseñas y notas privadas usando Angular y FastAPI — una inmersión intencionada en las prácticas que hacen seguros a los gestores de contraseñas reales.',
+    'securevault.feature1': 'Registro con hashing Argon2 y UUIDs como claves primarias en PostgreSQL',
+    'securevault.feature2': 'Frontend Angular 21 con arquitectura standalone y lazy-loading',
+    'securevault.feature3': 'Entorno Dockerizado con hot-reload para desarrollo',
 
     // Skills
     'skills.tag': 'Stack Técnico',
@@ -156,6 +164,8 @@ export const translations = {
     'projects.tag': 'Projects',
     'projects.experience': '1 year of experience',
     'projects.view': 'View project →',
+    'projects.repo': 'View repository',
+    'projects.repo.private': 'Private repository',
     'banubot.subtitle': 'Educational robotics · Inclusive education',
     'banubot.description':
       'Educational robot based on Escornabot, modified to provide feedback with lights, sounds and movement. Children answer questions on a web platform and the robot advances in real time on themed physical maps — turning reading comprehension into a tangible experience for students with special educational needs.',
@@ -168,6 +178,12 @@ export const translations = {
     'edurun.feature1': 'Full traceability: keystrokes, time and real-time changes',
     'edurun.feature2': 'Isolated execution in ephemeral Docker containers',
     'edurun.feature3': 'Automatic detection of copy-paste and tab switching',
+    'securevault.subtitle': 'Web security · Password management',
+    'securevault.description':
+      'Full-stack project focused on exploring web security concepts: Argon2 hashing, JWT authentication, and safe handling of sensitive data. Provides an interface for storing passwords and private notes using Angular and FastAPI — an intentional deep-dive into the practices that make real password managers secure.',
+    'securevault.feature1': 'Argon2 password hashing and UUID primary keys in PostgreSQL',
+    'securevault.feature2': 'Angular 21 frontend with standalone architecture and lazy-loading',
+    'securevault.feature3': 'Dockerized environment with hot-reload for development',
 
     // Skills
     'skills.tag': 'Tech Stack',
