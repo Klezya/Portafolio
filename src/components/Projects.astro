@@ -18,6 +18,7 @@ const projects = [
     imageAlt: 'Vista previa de BanuBot',
     placeholderEmoji: '🤖',
     i18nPrefix: 'banubot',
+    category: 'professional' as const,
   },
   {
     title: 'Edurun',
@@ -35,6 +36,7 @@ const projects = [
     imageAlt: 'Vista previa de Edurun',
     placeholderEmoji: '🎓',
     i18nPrefix: 'edurun',
+    category: 'professional' as const,
   },
   {
     title: 'SecureVault',
@@ -54,8 +56,9 @@ const projects = [
     i18nPrefix: 'securevault',
     repoLink: 'https://github.com/Klezya/SecureVault/tree/development',
     wip: true,
+    category: 'personal' as const,
   },
-];
+] as const;
 ---
 
 <section id="proyectos" class="py-24 section-alt fade-in-section">
@@ -74,10 +77,34 @@ const projects = [
       </div>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-12">
-      {projects.map((project) => (
-        <ProjectCard {...project} />
-      ))}
+    {/* Proyectos Reales */}
+    <div class="mb-20">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="inline-block w-8 h-px bg-[var(--color-accent)]"></span>
+        <h3 class="text-lg font-semibold" style="color: var(--color-text);" data-i18n="projects.professional.title">Experiencia Laboral</h3>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12">
+        {projects
+          .filter((p) => p.category === 'professional')
+          .map((project) => (
+            <ProjectCard {...project} />
+          ))}
+      </div>
+    </div>
+
+    {/* Proyectos Personales */}
+    <div>
+      <div class="flex items-center gap-3 mb-8">
+        <span class="inline-block w-8 h-px bg-[var(--color-accent)]"></span>
+        <h3 class="text-lg font-semibold" style="color: var(--color-text);" data-i18n="projects.personal.title">Proyectos Personales</h3>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12">
+        {projects
+          .filter((p) => p.category === 'personal')
+          .map((project) => (
+            <ProjectCard {...project} />
+          ))}
+      </div>
     </div>
   </div>
 </section>

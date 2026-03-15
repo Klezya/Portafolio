@@ -51,6 +51,8 @@ export const translations = {
     // Projects
     "projects.tag": "Proyectos",
     "projects.experience": "1 año de experiencia",
+    "projects.professional.title": "Experiencia Laboral",
+    "projects.personal.title": "Proyectos Personales",
     "projects.view": "Ver proyecto →",
     "projects.repo": "Ver repositorio",
     "projects.repo.private": "Repositorio privado",
@@ -176,6 +178,8 @@ export const translations = {
     // Projects
     "projects.tag": "Projects",
     "projects.experience": "1 year of experience",
+    "projects.professional.title": "Work Experience",
+    "projects.personal.title": "Personal Projects",
     "projects.view": "View project →",
     "projects.repo": "View repository",
     "projects.repo.private": "Private repository",

@@ -3,8 +3,8 @@ interface Props {
   title: string;
   subtitle: string;
   description: string;
-  features: string[];
-  tags: string[];
+  features: readonly string[];
+  tags: readonly string[];
   link: string;
   linkLabel: string;
   image: string;
@@ -13,6 +13,7 @@ interface Props {
   i18nPrefix: string;
   repoLink?: string;
   wip?: boolean;
+  category?: 'professional' | 'personal';
 }
 
 const { title, subtitle, description, features, tags, link, linkLabel, image, imageAlt, placeholderEmoji, i18nPrefix, repoLink, wip } = Astro.props;
